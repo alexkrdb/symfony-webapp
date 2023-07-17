@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+    <div class="card px-3">
+        <div class="row align-items-center my-5">
+            <div class="col-lg-6">
+                <div id="demo" class="carousel slide" data-bs-toggle="tooltip" title="Ryba..." data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><img class="img-fluid rounded mb-lg-0 d-block w-100"
+                                                               style="height: 400px;" src="{{ asset('images/fish_1.jpg') }}"
+                                                               alt="fish_1"></div>
+                        <div class="carousel-item"><img class="img-fluid rounded  mb-lg-0 d-block w-100"
+                                                        style="height: 400px;" src="{{ asset('images/fish_2.jpg') }}"
+                                                        alt="fish_2">
+                        </div>
+                        <div class="carousel-item"><img class="img-fluid rounded mb-lg-0 d-block w-100"
+                                                        style="height: 400px;" src="{{ asset('images/fish_3.jpg') }}"
+                                                        alt="fish_3">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span></button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span></button>
+                </div>
+            </div>
+            <div class="col-lg-6"><h1 class="font-weight-light mt-2">Świat podwodny</h1>
+                <p>Prowadzimy podstawowe i profesjonalne szkolenia dla nurków. Jesteśmy pierwszymi na świecie, ktorzy
+                    zaczęli nurkować bez żadnego sprzętu, umiejętności i chęci.</p></div>
+        </div>
+        <div class="row gx-4 gx-lg-5">
+            <div class="col-md-4 col-12 mb-5">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body"><h2 class="card-title">To jest tylko początek!</h2>
+                        <p class="card-text">Podstawowy kurs nurkowy jest bazą, po której będziesz mógł dalej sam
+                            rozwijać swoje umiejętnosci. Wymagany jest tylko strój kąpielowy. Jeśli masz jakieś pytania
+                            to sprobuj skontaktować się z nami</p></div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{ path('app_contact') }}">Kontakt</a></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-5">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body"><h2 class="card-title">Czekamy na ciebie!</h2>
+                        <p class="card-text">Po zakończeniu tego kursu otrzymasz unikalny certyfikat naszej organizacji.
+                            Za jakieś 20 złotych będzie to nawet plastikowa wersja! Niestety inne światowe organizacje
+                            nurkowe nie akceptują tego certyfikatu... Amatorzy...</p></div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" href="{{ path('courses_main') }}">Zanurkujmy!</a></div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 mb-5">
+                <div class="card h-100 shadow-lg">
+                    <div class="card-body"><h2 class="card-title">Wspaniałe widoki!</h2>
+                        <p class="card-text" data-bs-toggle="tooltip"
+                           title="Długie przebywacnie pod wodą szkodzi twojemu zdrowiu">Pod wodą jest naprawdę
+                            przepiękny świat, i za pomocą naszych szkoleń otrzymasz możliwość poznać go.</p></div>
+                    <div class="card-footer"><a class="btn btn-primary btn-sm" data-bs-toggle="tooltip"
+                                                title="W trackie tworzenia tey strony ucierpiał jeden student!"
+                                                href="{{ path('app_gallery') }}">Zdjęcia!</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

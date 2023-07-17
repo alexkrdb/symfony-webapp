@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit profile{% endblock %}
+
+{% block body %}
+    <div class="card p-4" style="min-height: 85vh">
+        <a class="btn btn-dark btn-lg me-auto" href="{{ path('profile_courses', {id: user.id}) }}">
+            Cofnij
+        </a>
+
+        <h1 class="mx-auto">{{ userCourse.courseref.name }}</h1>
+        <p>Czy na pewno chcesz anulować rezerwację?</p>
+        {{ form(form) }}
+
+
+    </div>
+
+{% endblock %}

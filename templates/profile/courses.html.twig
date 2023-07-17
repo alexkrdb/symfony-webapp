@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Twoje kursy{% endblock %}
+
+{% block body %}
+
+    <div class="card p-4" style="min-height: 85vh">
+        <div class="row">
+            {% for course in courses %}
+                <div class="col-6 my-3">
+                    <div class="card p-3 mx-5 pb-4 shadow-sm">
+                        <h1>{{ course.name }}</h1>
+                        <p>{{ course.description }}</p>
+                        <p>
+                            Od: {{ course.startAt|date("d.m.Y") }} <br>
+                            Do: {{ course.endAt|date("d.m.Y") }}
+                        </p>
+                        {% if course.status == active %}
+                        <hr>
+                        <a href="{{ path('profile_delete_course', {id: app.user.id, course_id: course.id}) }}" class="btn btn-dark mx-5">
+                            Anuluj rezerwację
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% else %}
+                <div class="d-flex  flex-column">
+                    <p class="flex-row mx-auto">Nie masz jeszcze żadnych kursów</p>
+                    <a class="flex-row btn btn-dark btn-lg" href="{{ path('courses_main') }}">Zapisz się</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

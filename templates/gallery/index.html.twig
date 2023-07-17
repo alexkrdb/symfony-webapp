@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Gallery{% endblock %}
+
+{% block body %}
+    <div class="card px-5">
+        <p class="h1 text-center">Galeria</p>
+        <p class="h5 text-center text-secondary ">Unikalne zdjęcia zrobione
+            Ziemniakiem</p>
+        <div class="row px-1">
+            {% for i in 1..12 %}
+                <div class=" col-12 col-md-6 col-lg-4 p-1 p-xl-3 img-fluid">
+                    <img src="{{ asset('images/gallery_'~ i~'.jpg') }}" alt="gallery{{ i }}"
+                         data-bs-toggle="tooltip" title="Ryba..."
+                         class="mx-auto img-thumbnail shadow "
+                    >
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

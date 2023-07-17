@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit profile{% endblock %}
+
+{% block body %}
+    <div class="card p-4" style="min-height: 85vh">
+        <h1 class="mx-auto">Edycja profilu</h1>
+        <h3 class="mx-auto text-muted">Nie wiesz gdzie wpisał numer konta?</h3>
+        {{ form_start(form) }}
+        {{ form_label(form.username) }}<br>
+        {{ form_widget(form.username) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.surname) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.plainPassword, {
+            label: 'Potwierdz hasło'
+        }) }}
+        {{ form_row(form.agreeTerms) }}
+        <div class="d-flex justify-content-around">
+            <button type="submit" class="btn btn-lg btn-dark">Zmień profil</button>
+            <a class="btn btn-danger btn-lg" href="{{ path('profile_delete', {id: user.id}) }}">Usuń Profil</a>
+            <a class="btn btn-dark btn-lg" href="{{ path('profile_index', {id: user.id}) }}">
+                Cofnij
+            </a>
+        </div>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

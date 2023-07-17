@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit profile{% endblock %}
+
+{% block body %}
+    <div class="card p-4" style="
+    min-height: 85vh;
+    background-color: #e9f7f6;
+">
+        <a class="btn btn-dark btn-lg me-auto" href="{{ path('profile_edit', {id: user.id}) }}">
+            Cofnij
+        </a>
+        <hr>
+        <div class="card px-auto p-3">
+            <div class="mx-auto p-3">
+
+                <h3 class="text-danger">Czy na pewno chcesz usunąć profil?</h3>
+                {{ form_start(form) }}
+                {{ form_row(form.plainPassword) }}
+                {{ form_row(form.submit, {'attr': {'class': 'btn-danger btn-lg'}}) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

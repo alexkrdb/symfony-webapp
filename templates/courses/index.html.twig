@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Zapisy{% endblock %}
+
+{% block body %}
+
+    <div class="card p-4" style="background-color: #e9f7f6">
+        <div class="row">
+            {% for course in courses %}
+                <div class="col-6 my-3">
+                    <div class="card p-3 mx-5 pb-4 shadow-lg">
+                        <h1>{{ course.name }}</h1>
+                        <p>{{ course.description }}</p>
+                        <p>
+                            Od: {{ course.startAt|date("d.m.Y") }} <br>
+                            Do: {{ course.endAt|date("d.m.Y") }}
+                        </p>
+                        <hr>
+                        <a href="{{ path('courses_detail', {id: course.id}) }}" class="btn btn-dark mx-5">
+                            Przęglądaj
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

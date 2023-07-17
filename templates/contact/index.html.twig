@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+    <div class="card">
+        <p class="h1 text-center">Skontaktuj się z nami!</p>
+        <p class="h5 text-secondary text-center">Jeśli potrafisz</p>
+        <div class="row py-3">
+            <div class="col-12">
+                <ul class="my-5 list-group list-group-flush mx-auto text-center" style="font-size: 20px; ">
+                    <li class="list-group-item list-group-item-action ">Adres: pół godziny wprost na zachód, i dwie
+                        godziny
+                        w kierunku morza(lub na mapie)
+                    </li>
+                    <li class="list-group-item list-group-item-action">Telefon: niestety nie mamy prądu pod wodą</li>
+                    <li class="list-group-item list-group-item-action">Email: po prostu wrzuć butełkę z listem do
+                        morza
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 ">
+                <p class="h2 text-center">Gdzie jesteśmy?</p>
+                <!--Google map-->
+                <div class="mx-auto ratio ratio-21x9  ">
+                    <div class="d-flex justify-content-center">
+                        <iframe class="w-75 min-h-"
+                                src="https://maps.google.com/maps?q=45.04791265700358,%20-35.36522862329655&t=k&z=3&ie=UTF8&iwloc=&output=embed">
+                        </iframe>
+                    </div>
+                </div>
+                <!--Google Maps-->
+            </div>
+        </div>
+    </div>
+{% endblock %}

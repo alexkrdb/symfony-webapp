@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+    <div class="card p-4" style="min-height: 85vh">
+        <h1>Witamy {{ user.name }}!</h1>
+        <div class="card p-4">
+            <p>Proponujemy Panu ciekawą informację:<br>
+            <hr> Lorem ipsum dolor sit amet, consectetur adipisicing elit. At aut
+                distinctio iusto natus perferendis placeat provident quae quam sunt voluptatibus! Debitis impedit labore
+                porro repellendus sint? Aliquam aperiam atque aut cum dolores facilis fuga itaque laudantium magnam nemo
+                omnis perspiciatis quas, quia quis ratione reiciendis rem sint tempore totam veritatis.
+            </p>
+        </div>
+        <div class="card p-4 mt-3">
+            <h1> Jeśli nie wiesz co wprowadzałeś na rejestracji, to</h1>
+            <table class="table table-striped">
+                <tr>
+                    <td>
+                        Nazwa użytkownika:
+                    </td>
+                    <td>
+                        {{ user.username }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Twoje imię:
+                    </td>
+                    <td>
+                        {{ user.name }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Twoje Nazwisko:
+                    </td>
+                    <td>
+                        {{ user.surname }}
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Twój email:
+                    </td>
+                    <td>
+                        {{ user.email }}
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+    </div>
+{% endblock %}

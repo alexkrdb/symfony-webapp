@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Rejestracja{% endblock %}
+
+{% block body %}
+
+    <div class="card p-4" style="min-height: 75vh">
+        <h1 class="mx-auto">Zarejestruj się</h1>
+        <div class="card mx-5 p-4" style="background-color: #a2b3ba">
+            {{ form_start(registrationForm) }}
+            {{ form_label(registrationForm.username) }}<br>
+            {{ form_widget(registrationForm.username) }}
+            {{ form_row(registrationForm.name) }}
+            {{ form_row(registrationForm.surname) }}
+            {{ form_row(registrationForm.email) }}
+            {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }}
+            {{ form_row(registrationForm.agreeTerms) }}
+
+            <button type="submit" class="btn btn-lg btn-dark">Register</button>
+            {{ form_end(registrationForm) }}
+        </div>
+    </div>
+{% endblock %}
